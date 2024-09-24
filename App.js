@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View ,TouchableOpacity, Alert} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { HomePage } from './Controller/Screen/home';
 // import {openDatabase} from 'react-native-sqlite-storage';
 
 // export const getDBConnection = async () => {
@@ -11,26 +12,11 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const Stack = createNativeStackNavigator();
 
-const Screen1  = ({ navigation }) => (
-  <View style={styles.container}>
-    <Text>Page 1</Text>
-    <View style={styles.Footer}>
-      <TouchableOpacity disabled >
-        <Text style={styles.ButtonLeftLoaded} >Page1</Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.replace('Screen2')}>
-        <Text style={styles.ButtonRight}>Page2</Text>
-      </TouchableOpacity>
-    </View>
-    <StatusBar style="auto" />
-  </View>
-);
-
-const Screen2 = ({ navigation }) => (
+const TotalPage = ({ navigation }) => (
   <View style={styles.container}>
     <Text>Page2</Text>
     <View style={styles.Footer}>
-      <TouchableOpacity onPress={() => navigation.replace('Screen1')}>
+      <TouchableOpacity onPress={() => navigation.replace('HomePage')}>
         <Text style={styles.ButtonLeft} >Page1</Text>
       </TouchableOpacity>
       <TouchableOpacity disabled>
@@ -41,18 +27,19 @@ const Screen2 = ({ navigation }) => (
   </View>
 );
 const SwitchPage1 = (navigation) => {
-  navigation.replace('Screen1')
+  navigation.replace('HomePage')
 };
 
 const SwitchPage2 = (navigation) => {
-  navigation.replace('Screen2')
+  navigation.replace('TotalPage')
 };
+
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Screen1">
-        <Stack.Screen name="Screen1" component={Screen1} />
-        <Stack.Screen name="Screen2" component={Screen2} />
+      <Stack.Navigator initialRouteName="HomePage">
+        <Stack.Screen name="HomePage" component={HomePage} options={{ headerShown: false }}/>
+        <Stack.Screen name="TotalPage" component={TotalPage} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
