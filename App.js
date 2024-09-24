@@ -2,14 +2,16 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View ,TouchableOpacity, Alert} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-// import {openDatabase} from 'react-native-sqlite-storage';
-
-// export const getDBConnection = async () => {
-//   return openDatabase({name: 'pute.db', location: 'default'});
-// };
+import { getDBConnection,createTableUser,addUser,OpenDB } from './Controller/DBGestion/DBFunction';
+import {openDatabase } from 'react-native-sqlite-storage';
+import SQLite from 'react-native-sqlite-storage';
 
 
 const Stack = createNativeStackNavigator();
+// SQLite.enablePromise(true); 
+// db = OpenDB()
+
+// console.log("test")
 
 const Screen1  = ({ navigation }) => (
   <View style={styles.container}>
