@@ -2,11 +2,11 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View ,TouchableOpacity, Alert} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import {openDatabase} from 'react-native-sqlite-storage';
+// import {openDatabase} from 'react-native-sqlite-storage';
 
-export const getDBConnection = async () => {
-  return openDatabase({name: 'pute.db', location: 'default'});
-};
+// export const getDBConnection = async () => {
+//   return openDatabase({name: 'pute.db', location: 'default'});
+// };
 
 
 const Stack = createNativeStackNavigator();
