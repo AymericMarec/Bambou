@@ -1,7 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View ,TouchableOpacity, Alert} from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { StyleSheet, Text, View ,TouchableOpacity} from 'react-native';
+
 
 
 export const HomePage  = ({ navigation }) => (

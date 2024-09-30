@@ -1,45 +1,9 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View ,TouchableOpacity, Alert} from 'react-native';
+import { StyleSheet, Text, View ,TouchableOpacity, Alert,useEffect } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { getDBConnection,createTableUser,addUser,OpenDB } from './Controller/DBGestion/DBFunction';
-import {openDatabase } from 'react-native-sqlite-storage';
-import SQLite from 'react-native-sqlite-storage';
-import { HomePage } from './Controller/Screen/home';
-// import {openDatabase} from 'react-native-sqlite-storage';
-
-// export const getDBConnection = async () => {
-//   return openDatabase({name: 'pute.db', location: 'default'});
-// };
-
+import { HomePage,TotalPage } from './Controller/Screen/home';
 
 const Stack = createNativeStackNavigator();
-// SQLite.enablePromise(true); 
-// db = OpenDB()
-
-// console.log("test")
-
-const TotalPage = ({ navigation }) => (
-  <View style={styles.container}>
-    <Text>Page2</Text>
-    <View style={styles.Footer}>
-      <TouchableOpacity onPress={() => navigation.replace('HomePage')}>
-        <Text style={styles.ButtonLeft} >Page1</Text>
-      </TouchableOpacity>
-      <TouchableOpacity disabled>
-        <Text style={styles.ButtonRightLoaded}>Page2</Text>
-      </TouchableOpacity>
-    </View>
-    <StatusBar style="auto" />
-  </View>
-);
-const SwitchPage1 = (navigation) => {
-  navigation.replace('HomePage')
-};
-
-const SwitchPage2 = (navigation) => {
-  navigation.replace('TotalPage')
-};
 
 export default function App() {
   return (
